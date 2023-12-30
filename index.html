@@ -129,6 +129,16 @@
     </div>
 
     <script>
+	    	var qrdata = decodeURI(window.location.search)
+		  .replace('?', '')
+		  .split('&')
+		  .map(param => param.split('='))
+		  .reduce((values, [ key, value ]) => {
+			values[ key ] = value
+			return values
+		  }, {})
+	    
+	var foodtotal = Math.Min(qrdata['total']*100,100);
       // Replace with your own publishable key: https://dashboard.stripe.com/test/apikeys
       var PUBLISHABLE_KEY = 'pk_test_BbJLYPnbhiTd9sTrgT8QUPXk';
       // Replace with the domain you want your users to be redirected back to after payment
@@ -160,7 +170,7 @@
           var items = [{ price: priceId, quantity: 1 }];
           */
           var price_id = 'price_1H0pKGJU74MEakNG6UhebfBt'; // 'price_1MekeeJU74MEakNGMfN8pMa4'
-          var items = [{ price: price_id, quantity: 100 }];
+          var items = [{ price: price_id, quantity: foodtotal }];
           var mode = 'payment';
          // var priceId = e.target.dataset.priceId;
           
