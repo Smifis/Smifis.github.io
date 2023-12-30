@@ -155,7 +155,7 @@
           var items = [{ price: price_id, quantity: document.getElementById('PaymentAmount').value*100 }];
           var mode = 'payment';
 
-		var urlparams = '&amount='+document.getElementById('PaymentAmount').value+'&tid='+qrdata['tid'] ;
+		var urlparams = '&amount='+document.getElementById('PaymentAmount').value+'&tid='+qrdata['tid'] + '&total='+ qrdata['total'];
 		
          // var priceId = e.target.dataset.priceId;
           
