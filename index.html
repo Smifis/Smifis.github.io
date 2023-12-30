@@ -180,6 +180,9 @@
           var price_id = 'price_1OT5jCJU74MEakNGmHdeKIbo'; // 'price_1MekeeJU74MEakNGMfN8pMa4'
           var items = [{ price: price_id, quantity: document.getElementById('PaymentAmount').value*100 }];
           var mode = 'payment';
+
+		var urlparams = '&amount='+document.getElementById('PaymentAmount').value+'&tid='+qrdata['tid'] ;
+		
          // var priceId = e.target.dataset.priceId;
           
           // price_1MekeeJU74MEakNGMfN8pMa4 £1.00 Product
@@ -191,9 +194,9 @@
               mode: mode,
               lineItems: items,
               successUrl:
-                DOMAIN + 'success.html?session_id={CHECKOUT_SESSION_ID}',
+                DOMAIN + 'success.html?session_id={CHECKOUT_SESSION_ID}'+urlparams,
               cancelUrl:
-                DOMAIN + 'canceled.html?session_id={CHECKOUT_SESSION_ID}',
+                DOMAIN + 'canceled.html?session_id={CHECKOUT_SESSION_ID}'+urlparams,
             })
             .then(handleResult);
         });
