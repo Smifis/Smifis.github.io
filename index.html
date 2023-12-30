@@ -16,7 +16,7 @@
   </head>
 
   <body>
-    <div class="sr-root">
+  <!--  <div class="sr-root"> 
       <div class="sr-main" style="display: flex;">
         <header class="sr-header">
           <div class="sr-header__logo"></div>
@@ -44,7 +44,7 @@
               data-price-id="sku_GU4LB0wBViiYsm"
             >
               Add 5% tip
-            </button> -->
+            </button>
             <div>
                           <button
               data-checkout-mode="payment"
@@ -52,23 +52,72 @@
               Add 10% tip
             </button>
             </div>
+			
           </section>
-          
-        <div class="sr-container">
-          
           <section class="container">
-          Charge me <input type="number" name="Price" value="1.00">
-          </section>
-          
-          <section class="container">
-            
+		            Charge me <input type="number" name="Price" value="1.00" DISABLED>
+
                           <button
               data-checkout-mode="payment"
             >
               Pay Now
             </button>
           </section>
+          </div>
         </div>
+        <div id="error-message"></div>
+      </div>
+    </div>
+	-->
+	<div class="sr-root">
+      <div class="sr-main" style="/* display: flex; */">
+        <header class="sr-header">
+          <div class="sr-header__logo"></div>
+        </header>
+        <div class="sr-container">
+          <section class="container">
+            <h1>Your Bill</h1>
+            <h3>Food and drink:</h3>
+            <h3 style="text-align:right">£xx.xx</h3>
+            <hr>
+            <h2>To Pay:</h2>
+            <h2 style="text-align:right">£xx.xx</h2>
+            <p><em>Please have a member of staff with you while you complete your payment</em></p>
+
+          </section>
+          <section class="container">
+            <div>
+            <h1>Did you enjoy your meal?</h1>
+            <h3>Consider adding a tip!</h3>
+            <p>We love how hard our staff works for us, and pass every penny of your tip to them!<br>Please consider leaving a <em>cash tip</em>, we are currently <u>unable to accept card tips</u></p>
+              </div>
+            <div><!--
+                          <button
+              data-checkout-mode="payment"
+              data-price-id="sku_GU4LB0wBViiYsm"
+            >
+              Add 5% tip
+            </button> -->
+            <div>
+                          <button data-checkout-mode="payment">
+              Add 10% tip
+            </button>
+            </div>
+          </div></section>
+          
+        
+          
+          <section class="container">
+          Charge me <input type="number" name="Price" value="1.00">
+<section class="container">
+            
+                          <button data-checkout-mode="payment">
+              Pay Now
+            </button>
+          </section>          
+</section>
+          
+          
         </div>
         <div id="error-message"></div>
       </div>
