@@ -18,10 +18,16 @@
           <a href="./" class="sr-header__logo"></a>
         </header>
         <div class="sr-payment-summary completed-view">
-          <h1>Your test payment succeeded</h1>
-          <h4>Checkout Session ID: <span id="session"></span></h4>
+          <h1>Your payment succeeded</h1>
+          <p>
+            Amount <span id="amount"></span><br>
+            Checkout Session ID: <span id="session"></span>
+          </p>
+          <h2>Please make sure a staff member has seen you process the payment!
+          <h5>Many thanks!</h5>
+          <p>Please scan the qr code again to make additional payments</p>
         </div>
-      <div class="sr-content">
+      <div class="sr-content" style="display:none">
         <div class="pasha-image-stack">
           <img
             src="https://picsum.photos/280/320?random=1"
@@ -52,6 +58,11 @@
       if (urlParams.has("session_id")) {
         document.getElementById("session").textContent = urlParams.get(
           "session_id"
+        );
+      }
+      if (urlParams.has("amount")) {
+        document.getElementById("amount").textContent = urlParams.get(
+          "amount"
         );
       }
     </script>
