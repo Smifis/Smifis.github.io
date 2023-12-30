@@ -48,13 +48,14 @@ h4 {
   display: flex;
   flex-direction: row;
   width: 100%;
-  max-width: 980px;
-  padding: 48px;
+  /* max-width: 980px; */
+  /* padding: 48px; */
   align-content: center;
   justify-content: center;
-  height: auto;
-  min-height: 100vh;
+  /* height: auto; */
+  /* min-height: 100vh; */
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 .sr-header {
   margin-bottom: 32px;
@@ -68,7 +69,7 @@ h4 {
 .sr-main,
 .sr-content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   height: 100%;
   align-self: center;
@@ -469,6 +470,8 @@ pre {
 /* Custom */
 .sr-container {
   display: flex;
+  /* flex-basis: fit-content; */
+  flex-wrap: wrap;
 }
 .container {
   border: 1px solid #e8e8e8;
@@ -476,8 +479,10 @@ pre {
   padding: 32px 28px;
   display: flex;
   flex-direction: column;
-  max-width: 400px;
-  min-width: 250px;
+  /* max-width: 400px; */
+  width: 100%;
+  /* min-width: 47%; */
+  margin-top: 32px;
 }
 
 .container .pasha-image-stack {
@@ -485,7 +490,7 @@ pre {
 }
 
 .container:first-of-type {
-  margin-right: 20px;
+  /* margin-right: 20px; */
 }
 
 .quantity-setter {
@@ -565,10 +570,10 @@ input[type="number"]::-webkit-outer-spin-button {
   box-sizing: border-box;
   padding: 15px;
   line-height: 1.15;
-  position: absolute;
+ /** position: absolute;
   bottom: 2vh;
   left: 0;
-  right: 0;
+  right: 0; */
   text-align: center;
   justify-content: center;
 }
