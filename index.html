@@ -141,26 +141,26 @@
 	    
 	var foodtotal = Math.max(qrdata['amount'],1);
 	    
-		// total from till
-		// amount from stripe payment attempt
+		// total = from till
+		// amount = from stripe payment attempt
 	if (qrdata['amount'] == undefined) {
 		// no amount, fresh load, use total from till
 	   var foodtotal = Math.max(qrdata['total'],1);
 		
 	    
-	document.getElementById('PaymentAmount').textContent = '£' + foodtotal;
+	document.getElementById('PaymentAmount').value = foodtotal;
 	document.getElementById('foodamount').textContent = '£' +foodtotal;
 	document.getElementById('topay').textContent = '£' +foodtotal;
 		
 	} else {
 		// we have an amount passed, so use the for payment amount, use till total for food and drink amount
 		
+	   var foodtotal = qrdata['amount'];
 	    
 	document.getElementById('foodamount').textContent ='£' + qrdata['total'];
-	document.getElementById('PaymentAmount').textContent = '£'+ qrdata['amount'];
+	document.getElementById('PaymentAmount').value = qrdata['amount'];
 	document.getElementById('topay').textContent = '£' + qrdata['total'];
 		
-	   var foodtotal = Math.max(qrdata['amount'],1);
 	}
 
 	    
