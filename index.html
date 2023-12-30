@@ -21,24 +21,51 @@
         <div class="sr-container">
           <section class="container">
             <h1>Your Bill</h1>
-            <h2>Food and drink:</h2>
+            <h3>Food and drink:</h3>
+            <h3 style="text-align:right">£xx.xx</h3>
+            <hr />
+            <h2>To Pay:</h2>
             <h2 style="text-align:right">£xx.xx</h2>
-            <button
+            <p><em>Please have a member of staff with you while you complete your payment</em></p>
+
+          </section>
+          <section class="container">
+            <div>
+            <h1>Did you enjoy your meal?</h1>
+            <h3>Consider adding a tip!</h3>
+            <p>We love how hard our staff works for us, and pass every penny of your tip to them!<br>Please consider leaving a <em>cash tip</em>, we are currently <u>unable to accept card tips</u></p>
+              </div>
+            <div><!--
+                          <button
               data-checkout-mode="payment"
               data-price-id="sku_GU4LB0wBViiYsm"
             >
-              Donate $50.00 once
-            </button>
-          </section>
-          <section class="container">
-            <h1>Recurring Donation</h1>
-            <button
-              data-checkout-mode="subscription"
-              data-price-id="plan_GU4MXg0k0Uv1S6"
+              Add 5% tip
+            </button> -->
+            <div>
+                          <button
+              data-checkout-mode="payment"
             >
-              Donate $20.00 per month
+              Add 10% tip
+            </button>
+            </div>
+          </section>
+          
+        <div class="sr-container">
+          
+          <section class="container">
+          Charge me <input type="number" name="Price" value="1.00">
+          </section>
+          
+          <section class="container">
+            
+                          <button
+              data-checkout-mode="payment"
+            >
+              Pay Now
             </button>
           </section>
+        </div>
         </div>
         <div id="error-message"></div>
       </div>
@@ -51,9 +78,11 @@
 
     <script>
       // Replace with your own publishable key: https://dashboard.stripe.com/test/apikeys
-      var PUBLISHABLE_KEY = 'pk_test_Tr8olTkdFnnJVywwhNPHwnHK00HkHV4tnP';
+      var PUBLISHABLE_KEY = 'pk_test_BbJLYPnbhiTd9sTrgT8QUPXk';
       // Replace with the domain you want your users to be redirected back to after payment
       var DOMAIN = location.href.replace(/[^/]*$/, '');
+      // Make Cart
+      //    var items = [{ price: 'price_1MekeeJU74MEakNGMfN8pMa4', quantity: 1 }];
 
       if (PUBLISHABLE_KEY === 'pk_test_Tr8olTkdFnnJVywwhNPHwnHK00HkHV4tnP') {
         console.log(
@@ -73,10 +102,17 @@
 
       document.querySelectorAll('button').forEach(function (button) {
         button.addEventListener('click', function (e) {
+          /** 
           var mode = e.target.dataset.checkoutMode;
           var priceId = e.target.dataset.priceId;
           var items = [{ price: priceId, quantity: 1 }];
-
+          */
+          
+          var items = [{ price: 'price_1MekeeJU74MEakNGMfN8pMa4', quantity: 1 }];
+          var mode = 'payment';
+         // var priceId = e.target.dataset.priceId;
+          
+          // price_1MekeeJU74MEakNGMfN8pMa4 £1.00 Product
           // Make the call to Stripe.js to redirect to the checkout page
           // with the sku or plan ID.
           stripe
