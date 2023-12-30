@@ -20,8 +20,9 @@
         <div class="sr-payment-summary completed-view">
           <h1>Your payment succeeded</h1>
           <p>
-            Amount <span id="amount"></span><br>
-            Checkout Session ID: <span id="session"></span>
+            Amount Paid: <span id="amount"></span><br>
+            
+            TID / Checkout Session ID: <span id="tid"></span> / <span id="session"></span><br>
           </p>
           <h2>Please make sure a staff member has seen you process the payment!
           <h5>Many thanks!</h5>
@@ -62,6 +63,12 @@
       }
       if (urlParams.has("amount")) {
         document.getElementById("amount").textContent = urlParams.get(
+          "amount"
+        );
+      }
+      
+      if (urlParams.has("tid")) {
+        document.getElementById("tid").textContent = urlParams.get(
           "amount"
         );
       }
