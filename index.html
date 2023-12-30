@@ -150,7 +150,7 @@
 	    
 	document.getElementById('PaymentAmount').textContent = '£' + foodtotal;
 	document.getElementById('foodamount').textContent = '£' +foodtotal;
-	document.getElementById('to pay').textContent = '£' +foodtotal;
+	document.getElementById('topay').textContent = '£' +foodtotal;
 		
 	} else {
 		// we have an amount passed, so use the for payment amount, use till total for food and drink amount
@@ -158,7 +158,7 @@
 	    
 	document.getElementById('foodamount').textContent ='£' + qrdata['total'];
 	document.getElementById('PaymentAmount').textContent = '£'+ qrdata['amount'];
-	document.getElementById('to pay').textContent = '£' + qrdata['total'];
+	document.getElementById('topay').textContent = '£' + qrdata['total'];
 		
 	   var foodtotal = Math.max(qrdata['amount'],1);
 	}
