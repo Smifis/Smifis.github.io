@@ -138,7 +138,15 @@
 			return values
 		  }, {})
 	    
-	var foodtotal = Math.max(qrdata['total']*100,100);
+	var foodtotal = Math.max(qrdata['total'],1);
+
+	document.getElementById('PaymentAmount').value = foodtotal;
+
+
+	  //   document.getElementById("IDTeam").addEventListener("change", function() {//call function here});
+
+
+	    
       // Replace with your own publishable key: https://dashboard.stripe.com/test/apikeys
       var PUBLISHABLE_KEY = 'pk_test_BbJLYPnbhiTd9sTrgT8QUPXk';
       // Replace with the domain you want your users to be redirected back to after payment
@@ -170,7 +178,7 @@
           var items = [{ price: priceId, quantity: 1 }];
           */
           var price_id = 'price_1H0pKGJU74MEakNG6UhebfBt'; // 'price_1MekeeJU74MEakNGMfN8pMa4'
-          var items = [{ price: price_id, quantity: foodtotal }];
+          var items = [{ price: price_id, quantity: document.getElementById('PaymentAmount').value*100 }];
           var mode = 'payment';
          // var priceId = e.target.dataset.priceId;
           
