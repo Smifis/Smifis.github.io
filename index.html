@@ -108,7 +108,7 @@
         
           
           <section class="container">
-          Charge me <input type="number" id="PaymentAmount" value="1.00">
+          Charge me £<input type="number" id="PaymentAmount" value="1.00">
 <section class="container">
             
                           <button data-checkout-mode="payment">
@@ -177,12 +177,13 @@
           var priceId = e.target.dataset.priceId;
           var items = [{ price: priceId, quantity: 1 }];
           */
-          var price_id = 'price_1H0pKGJU74MEakNG6UhebfBt'; // 'price_1MekeeJU74MEakNGMfN8pMa4'
+          var price_id = 'price_1OT5jCJU74MEakNGmHdeKIbo'; // 'price_1MekeeJU74MEakNGMfN8pMa4'
           var items = [{ price: price_id, quantity: document.getElementById('PaymentAmount').value*100 }];
           var mode = 'payment';
          // var priceId = e.target.dataset.priceId;
           
           // price_1MekeeJU74MEakNGMfN8pMa4 £1.00 Product
+		// price_1OT5jCJU74MEakNGmHdeKIbo is 1p product
           // Make the call to Stripe.js to redirect to the checkout page
           // with the sku or plan ID.
           stripe
