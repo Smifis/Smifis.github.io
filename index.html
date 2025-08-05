@@ -92,7 +92,7 @@
 		// amount = from stripe payment attempt
 	if (qrdata['amount'] == undefined) {
 		// no amount, fresh load, use total from till
-	   var foodtotal = Math.max(qrdata['total'],1);
+	   var foodtotal = Math.max(qrdata['total'],1) * 0.95;
 		
 	    
 	document.getElementById('PaymentAmount').value = foodtotal;
